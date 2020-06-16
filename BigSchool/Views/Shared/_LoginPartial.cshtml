@@ -5,12 +5,22 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                @*@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false">
+                    @User.Identity.GetUserName() <span class="caret"> </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("Mine","Courses")">My Upcomming Courses</a></li>
+                    <li><a href="@Url.Action("Attending","Courses")">Course I'm going</a></li>
+                    <li><a href="#">Lecturer I'm flowing</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+                </ul>
+            </li>
+
+        </ul>
     }
 }
 else
@@ -20,3 +30,4 @@ else
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }
+

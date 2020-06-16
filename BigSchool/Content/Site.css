@@ -12,8 +12,29 @@
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
+.navbar-inverse{
+     background-color : #d41d50;
+     border-color : #fbf6f6;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color : white;
+}
+.navbar-inverse .navbar-brand{
+    color : white ;
+}
 .dl-horizontal dt {
     white-space: normal;
+}
+.course{
+    list-style:none;
+}
+.course >li{
+    position:relative;
+    margin-bottom:30px;
+}
+.course>li.date{
+    text-align:center;
+    background-color:#d41d50
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
