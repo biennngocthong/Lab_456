@@ -34,7 +34,15 @@
 }
 .course>li.date{
     text-align:center;
-    background-color:#d41d50
+    background-color:#d41d50;
+    color:white;
+    width:60px;
+    border-radius:8px;
+}
+.course >li.details{
+    position:absolute;
+    top:0;
+    left:70px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */

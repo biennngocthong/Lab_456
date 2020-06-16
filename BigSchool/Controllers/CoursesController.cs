@@ -1,6 +1,7 @@
 ﻿using BigSchool.Models;
 using BigSchool.ViewModels;
 using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -9,6 +10,10 @@ namespace BigSchool.Controllers
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
+        private bool l;
+
+        public string UserId { get; private set; }
+
         public CoursesController()
         {
             _dbContext = new ApplicationDbContext();
@@ -43,5 +48,6 @@ namespace BigSchool.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+      
     }
 }
