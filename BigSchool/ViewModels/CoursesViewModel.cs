@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
 
 namespace BigSchool.ViewModels
 {
@@ -11,4 +13,5 @@ namespace BigSchool.ViewModels
         public IEnumerable<Course> UpcommingCourses { get; set; }
         public bool ShowAction { get; set; }
     }
+  
 }
